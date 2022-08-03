@@ -29,11 +29,11 @@ async function main(event) {
     while (jsonData.length > 0) {
         const data = jsonData.slice(0, MAX_LENGTH);
         jsonData.splice(0, MAX_LENGTH);
-        console.log('data', data)
+        console.log('导入数据', data)
         // todo
         // 处理并导入分批的数据
     }
-    return jsonData;
+    // return jsonData;
 }
 
 exports.main = main;
