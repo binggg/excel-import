@@ -1,0 +1,37 @@
+{
+  "version": "2.0",
+  "envId": "lowcode-1gk9y5ik310a94df",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "excel-import",
+    "plugins": {
+      "function": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functions": [
+            {
+              "name": "excel-import",
+              "timeout": 300,
+              "envVariables": {},
+              "triggers": [
+                {
+                  "name": "import-timer-trigger",
+                  "type": "timer",
+                  "@config": " // config: 触发器配置，在定时触发器下，config 格式为 cron 表达式，规则见 https://docs.cloudbase.net/cli-v1/functions/trigger",
+                  "config": "0 0 2 1 * * *"
+                }
+              ],
+              "runtime": "Nodejs12.16",
+              "memorySize": 2048,
+              "handler": "index.main",
+              "installDependency": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "region": "ap-shanghai",
+  "functionRoot": "./functions",
+  "functions": []
+}
